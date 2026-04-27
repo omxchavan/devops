@@ -217,3 +217,160 @@ kubectl exec -it <pod_name> -- /bin/sh
 ---
 
 This README covers all essential commands and setup used in Docker and Kubernetes practical sessions.
+
+---
+
+## 11. Git Commands
+
+### Initialize Repository
+
+```bash
+git init
+```
+
+### Clone Repository
+
+```bash
+git clone <repo_url>
+```
+
+### Check Status
+
+```bash
+git status
+```
+
+### Add Files
+
+```bash
+git add .
+```
+
+### Add Specific File
+
+```bash
+git add <file_name>
+```
+
+### Commit Changes
+
+```bash
+git commit -m "your message"
+```
+
+### View Commit History
+
+```bash
+git log
+```
+
+### Create Branch
+
+```bash
+git branch <branch_name>
+```
+
+### Switch Branch
+
+```bash
+git checkout <branch_name>
+```
+
+### Create & Switch Branch
+
+```bash
+git checkout -b <branch_name>
+```
+
+### Merge Branch
+
+```bash
+git merge <branch_name>
+```
+
+### Add Remote Repository
+
+```bash
+git remote add origin <repo_url>
+```
+
+### Push Code
+
+```bash
+git push -u origin main
+```
+
+### Pull Latest Changes
+
+```bash
+git pull origin main
+```
+
+### Fetch Changes
+
+```bash
+git fetch
+```
+
+### Remove File from Git
+
+```bash
+git rm <file>
+```
+
+### Undo Changes (Before Commit)
+
+```bash
+git checkout -- <file>
+```
+
+### Undo Last Commit (Keep Changes)
+
+```bash
+git reset --soft HEAD~1
+```
+
+### Undo Last Commit (Delete Changes)
+
+```bash
+git reset --hard HEAD~1
+```
+
+### View Branches
+
+```bash
+git branch
+```
+
+### Delete Branch
+
+```bash
+git branch -d <branch_name>
+```
+
+---
+
+## 12. Git + Docker + Kubernetes Workflow
+
+```bash
+# 1. Clone Repo
+git clone <repo_url>
+cd project
+
+# 2. Make Changes
+git add .
+git commit -m "updated app"
+
+# 3. Push Code
+git push origin main
+
+# 4. Build Docker Image
+docker build -t node-app:v1 .
+
+# 5. Deploy to Kubernetes
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+```
+
+---
+
